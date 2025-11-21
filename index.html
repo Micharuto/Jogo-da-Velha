@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jogo da Velha — Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Jogo da Velha</h1>
+      <p class="subtitle">Escolha o modo e divirta-se!</p>
+    </header>
+
+    <section class="controls">
+      <div class="mode">
+        <label>
+          <input type="radio" name="mode" value="pvp" checked /> 2 jogadores
+        </label>
+        <label>
+          <input type="radio" name="mode" value="cpu" /> Jogar vs CPU
+        </label>
+      </div>
+
+      <div class="options">
+        <label>
+          Primeiro:
+          <select id="firstPlayer">
+            <option value="X">Jogador (X)</option>
+            <option value="O">Jogador (O)</option>
+          </select>
+        </label>
+
+        <label>
+          Dificuldade:
+          <select id="difficulty">
+            <option value="easy">Fácil</option>
+            <option value="hard" selected>Difícil (Minimax)</option>
+          </select>
+        </label>
+
+        <button id="newGame">Novo Jogo</button>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="Tabuleiro do jogo da velha">
+        <!-- 9 células serão geradas por JS -->
+      </div>
+    </section>
+
+    <section class="status">
+      <div id="info" class="info">Clique em Novo Jogo para começar</div>
+      <div class="scoreboard">
+        <div> X: <span id="scoreX">0</span> </div>
+        <div> Empates: <span id="scoreTie">0</span> </div>
+        <div> O: <span id="scoreO">0</span> </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Feito por você • Hospede no GitHub Pages</small>
+    </footer>
+  </main>
+
+  <template id="cell-template">
+    <button class="cell" role="gridcell" aria-label="celula" aria-pressed="false"></button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
